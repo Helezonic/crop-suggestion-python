@@ -28,9 +28,18 @@ def analyse():
     if(request.method == "POST"):
         import pandas as pd
         import numpy as np
-        #import os
-        optimum = pd.read_csv("./optimum1.csv")
-        price = pd.read_csv("./optimum2.csv") 
+        import os
+        # Check if running locally or on Vercel
+        if os.getenv("ENV") == "production":
+            # Load files from Vercel's static hosting
+            optimum = pd.read_csv("https://crop-suggestion-python.vercel.app/optimum1.csv")
+            price = pd.read_csv("https://crop-suggestion-python.vercel.app/optimum2.csv")
+        else:
+            # Load files from local directory
+            optimum = pd.read_csv("./public/optimum1.csv")
+            price = pd.read_csv("./public/optimum2.csv")
+
+
         optimum['N'] = optimum.N.astype(float)
         optimum['P'] = optimum.P.astype(float)
         optimum['K'] = optimum.K.astype(float)
