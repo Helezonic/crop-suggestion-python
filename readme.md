@@ -1,4 +1,12 @@
 
+# A PYTHON-FLASK MACHINE LEARNING CROP RECOMMENDATION SYSTEM
+
+## Get crop recommendation based on Nitrogen, Potassium, Phosphorous, pH, Temperature values
+
+<hr>
+
+### How to run in your system
+
 Clone: When someone clones the repository, they should:
 
 Create Virtual Environment: Create a virtual environment:
