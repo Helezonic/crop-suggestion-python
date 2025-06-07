@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Farming - {{ crop }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            z-index: 50;
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: normal;
+        }
+
+        .header a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .header a:hover {
+            color: white;
+        }
+
+        .container {
+            position: absolute;
+            top: 0;
+            max-height: 100vh;
+            margin: auto;
+            padding: 0px;
+            width: 100%;
+            z-index: -10;
+            
+        }
+
+        .container img {
+          margin : 0 auto;
+          width: 80%;
+        }
+
+        
+
+        .crop-header {
+            background-color: #e8e8e8;
+            padding: 20px;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-radius: 5px;
+        }
+
+        .crop-title {
+            font-size: 24px;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .crop-revenue {
+            font-size: 24px;
+            color: #333;
+            font-weight: normal;
+            text-align: right;
+        }
+
+        .content {
+            background-color: #e8e8e8;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 14px;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .section li {
+            margin-bottom: 5px;
+        }
+
+        .alternatives {
+            background-color: #d0d0d0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .alternatives h3 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .alternatives p {
+            color: #3a0f0f;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .crop-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .crop-revenue {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="/">Home</a>
+    </div>
+
+    <div class="container">
+        
+            
+            <img src="/static/images/{{ crop }}.png" alt="{{ crop }}" onerror="this.style.display='none'" height="100%">
+        
+
+        {% if crop1 or crop2 %}
+        <div class="alternatives">
+            <h3>Alternative Crop Recommendations</h3>
+            {% if crop1 %}
+                <p><strong>Second Choice:</strong> 
+                    {% if crop1 == 1 %}Garlic
+                    {% elif crop1 == 2 %}Onion
+                    {% elif crop1 == 3 %}Orange
+                    {% elif crop1 == 4 %}Peas
+                    {% elif crop1 == 5 %}Potato
+                    {% elif crop1 == 6 %}Rice
+                    {% elif crop1 == 7 %}Tomato
+                    {% elif crop1 == 8 %}Sugarcane
+                    {% else %}{{ crop1 }}
+                    {% endif %}
+                </p>
+            {% endif %}
+            {% if crop2 %}
+                <p><strong>Third Choice:</strong> 
+                    {% if crop2 == 1 %}Garlic
+                    {% elif crop2 == 2 %}Onion
+                    {% elif crop2 == 3 %}Orange
+                    {% elif crop2 == 4 %}Peas
+                    {% elif crop2 == 5 %}Potato
+                    {% elif crop2 == 6 %}Rice
+                    {% elif crop2 == 7 %}Tomato
+                    {% elif crop2 == 8 %}Sugarcane
+                    {% else %}{{ crop2 }}
+                    {% endif %}
+                </p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
