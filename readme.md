@@ -1,9 +1,10 @@
 
 # A PYTHON-FLASK MACHINE LEARNING CROP RECOMMENDATION SYSTEM
 
-## Get crop recommendation based on Nitrogen, Potassium, Phosphorous, pH, Temperature values
+### Get crop recommendation based on Nitrogen, Potassium, Phosphorous, pH, Temperature values using KNN algorithm.
 
-<hr>
+### Libraries used - NumPy, Scikit-learn, Pandas
+
 
 ### How to run in your system
 
