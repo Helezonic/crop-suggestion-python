@@ -132,4 +132,5 @@ def analyse():
     
 
 if (__name__ == "__main__"):
-    app.run()
+    # This only runs in development
+    app.run(debug=True)
